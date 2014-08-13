@@ -15,4 +15,13 @@ CONFIG   -= app_bundle
 TEMPLATE = app
 
 
-SOURCES += main.cpp
+SOURCES += main.cpp \
+    task.cpp
+
+unix:!macx: LIBS += -L$$PWD/../../../libFactorGraph/Debug/ -lFactorGraph
+
+INCLUDEPATH += $$PWD/../../../libFactorGraph/libFactorGraph
+DEPENDPATH += $$PWD/../../../libFactorGraph/libFactorGraph
+
+HEADERS += \
+    task.h
